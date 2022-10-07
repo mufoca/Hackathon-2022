@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 :root{
-  --background-color: #5cdb95;
-  --card-color: #379683;
+  --background-color: #89abe3ff;
+  --card-color: #4056a1;
   --text-color: #edf5e1;
-  --button-color: #05386b;
+  --button-color: rgb(230, 56, 126);
   --select-button-color: #05386b;
   /* --hover-color:  */
 }
+
+
 .wrapper, .content{
   display: flex;
   align-items: center;

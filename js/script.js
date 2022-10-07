@@ -22,7 +22,7 @@ btn.addEventListener('click',()=>{
     if(btn.innerHTML === "Force Start"){
         btn.innerHTML = "Force Stop";
         status.innerHTML = "ON";
-        status.style = "color:#009933";
+        status.style = "color:#000000";
         const reference = ref(db, 'Motor Status/');
         update(reference, {
            motor_status:true
@@ -33,7 +33,7 @@ btn.addEventListener('click',()=>{
     else{
         btn.innerHTML = "Force Start";
         status.innerHTML = "OFF";
-        status.style = "color: #ff0000";
+        status.style = "color: #000000";
         const reference = ref(db, 'Motor Status/');
         update(reference, {
            motor_status:false
