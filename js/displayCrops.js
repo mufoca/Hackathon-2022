@@ -46,7 +46,7 @@ function GetAllDataRealtime(){
         let crops = [];
         snapshot.forEach((childSnapshot) => {
             crops.push(childSnapshot.val());
-            console.log(crops);
+            // console.log(crops);
           // ...
         });
         AddAllItemToSelection(crops);
@@ -61,7 +61,7 @@ select_crops.onchange = function(){
     const starCountRef = ref(db, 'crops/' + selectedvalue);
     onValue(starCountRef, (snapshot) => {
     const data = snapshot.val();
-    console.log(data);
+    // console.log(data);
     printValue(data.temp,data.hum,data.soil);
 });
 }
