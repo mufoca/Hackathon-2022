@@ -30,27 +30,33 @@ let avg_moisture_val = document.getElementById("avg_moisture_val");
 
 const selectSensor = document.getElementsByClassName("select_sensor");
 
-let dbref = ref(db, "Sensor_data");
+let dbref = ref(db, "Sensor_data/Sensor1");
 onValue(dbref, (snapshot) => {
   let crops = [];
 //   snapshot.forEach((childSnapshot) => {
 //     crops.push(childSnapshot.val());
 //     const data = snapshot.val();
-//     // console.log(data);
+    // console.log(data);
         
     for (let i = 1; i > 0; i--) {
         let option = `<option value="${snapshot.val().Temperature}" id="temp_option${i}">Sensor ${i} Zone ${i}: ${snapshot.val().Temperature} &#8451;</option>`;
         selectSensor[0].firstElementChild.insertAdjacentHTML("afterend", option);
+        selectSensor[0].firstElementChild.remove();
+
     }
 
     for (let i = 1; i > 0; i--) {
         let option = `<option value="${snapshot.val().Moisture}" id="moisture_option${i}">Sensor ${i} Zone ${i}: ${snapshot.val().Moisture}</option>`;
         selectSensor[1].firstElementChild.insertAdjacentHTML("afterend", option);
+        selectSensor[1].firstElementChild.remove();
+
     }
 
     for (let i = 1; i > 0; i--) {
         let option = `<option value="${snapshot.val().Humidity}" id="hum_option${i}">Sensor ${i} Zone ${i}: ${snapshot.val().Humidity}</option>`;
         selectSensor[2].firstElementChild.insertAdjacentHTML("afterend", option);
+        selectSensor[2].firstElementChild.remove();
+
     }
 
 //   });
