@@ -58,6 +58,27 @@ onValue(dbref, (snapshot) => {
         selectSensor[2].firstElementChild.remove();
 
     }
+    console.log(snapshot.val().error == 1);
+    if(snapshot.val().dhterr == 1){
+        for (let i = 1; i > 0; i--) {
+            let option = `<option value="${snapshot.val().Temperature}" id="temp_option${i}">Sensor ${i} Zone ${i}: Not Working</option>`;
+            selectSensor[0].firstElementChild.insertAdjacentHTML("afterend", option);
+            selectSensor[0].firstElementChild.remove();
+        }
+        for (let i = 1; i > 0; i--) {
+            let option = `<option value="${snapshot.val().Humidity}" id="hum_option${i}">Sensor ${i} Zone ${i}: Not Working</option>`;
+            selectSensor[2].firstElementChild.insertAdjacentHTML("afterend", option);
+            selectSensor[2].firstElementChild.remove();
+        }
+    }
+    if(snapshot.val().moisterr == 1){
+        for (let i = 1; i > 0; i--) {
+            let option = `<option value="${snapshot.val().Moisture}" id="moisture_option${i}">Sensor ${i} Zone ${i}: Not Working</option>`;
+            selectSensor[1].firstElementChild.insertAdjacentHTML("afterend", option);
+            selectSensor[1].firstElementChild.remove();
+        }
+    
+    }
 
 //   });
 });
