@@ -25,7 +25,7 @@ btn.addEventListener('click',()=>{
         status.style = "color:#000000";
         const reference = ref(db, 'Motor Status/');
         update(reference, {
-           motor_status:"true"
+           motor_status:"ON"
         });
         console.log("Your Motor is ON");
         sendNotification("Motor Status",`Motor is ON`,"","Motor Status");
@@ -36,7 +36,7 @@ btn.addEventListener('click',()=>{
         status.style = "color: #000000";
         const reference = ref(db, 'Motor Status/');
         update(reference, {
-           motor_status:"false"
+           motor_status:"OFF"
         });
         console.log("Your Motor is OFF");
         sendNotification("Motor Status",`Motor is OFF`,"","Motor Status");
@@ -48,13 +48,13 @@ setInterval(() => {
     {
         const reference = ref(db, 'Motor Status/');
         update(reference, {
-            motor_status:"true"
+            motor_status:"ON"
         });
     }
     else{
         const reference = ref(db, 'Motor Status/');
         update(reference, {
-            motor_status:"false"
+            motor_status:"OFF"
         });
     }
 }, 1000);
